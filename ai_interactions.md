@@ -10,9 +10,8 @@
 
 **What task did you give the agent?**
 Challenge 1:
-1. identify three potential "edge case" inputs (e.g., negative numbers, 
-decimals, or extremely large values) that might still break the game, but do not modify the code. generate a suite of pytest cases that verify your game handles these inputs gracefully.
-2. generate the tests again but with the goal of checking the game behaves as one would expect (e.g. the edge cases do not pass because the code is buggy) -- not to check if the code behaves as one would expect the code to.
+1. `identify three potential "edge case" inputs (e.g., negative numbers, decimals, or extremely large values) that might still break the game, but do not modify the code. generate a suite of pytest cases that verify your game handles these inputs gracefully.`
+2. `generate the tests again but with the goal of checking the game behaves as one would expect (e.g. the edge cases do not pass because the code is buggy) -- not to check if the code behaves as one would expect the code to.`
 
 **What did the agent do?**
 Challenge 1: write a new file comprised of tests for expected behavior.
@@ -42,18 +41,20 @@ Challenge 1: I had to prompt the agent again to correct its line of thinking.
 **Prompt used:**
 
 ```
-<!-- Paste the prompt you gave the AI -->
-```
+add professional-grade docstrings to every function in logic_utils.py and then review the code for PEP 8 style compliance and resolve any formatting or naming issues```
 
 **Linting output before:**
-
+Pasted 5/11 problems in `logic_utils.py`
 ```
-<!-- Paste relevant linter warnings/errors -->
+Condition will always evaluate to False since the types "str" and "None" have no overlap
+Type of parameter "guess" is unknown
+Type annotation is missing for parameter "guess"
+Type of parameter "secret" is unknown
+Type annotation is missing for parameter "secret"
 ```
 
 **Changes applied:**
-
-<!-- Describe what you changed based on the AI's suggestions -->
+Docstrings, comments, and strict type-checking.
 
 ---
 

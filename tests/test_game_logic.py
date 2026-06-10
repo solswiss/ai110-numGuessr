@@ -19,28 +19,28 @@ def test_get_range_for_difficulty_hard():
 
 
 def test_parse_guess_empty():
-    ok, value, err = parse_guess("")
+    ok, value, err = parse_guess("", 0, 50)
     assert ok is False
     assert value is None
     assert err == "Enter a guess."
 
 
 def test_parse_guess_invalid():
-    ok, value, err = parse_guess("abc")
+    ok, value, err = parse_guess("abc", 0, 50)
     assert ok is False
     assert value is None
     assert err == "That is not a number."
 
 
 def test_parse_guess_float_string():
-    ok, value, err = parse_guess("42.0")
+    ok, value, err = parse_guess("42.0", 0, 50)
     assert ok is True
     assert value == 42
     assert err is None
 
 
 def test_parse_guess_integer_string():
-    ok, value, err = parse_guess("17")
+    ok, value, err = parse_guess("17", 0, 50)
     assert ok is True
     assert value == 17
     assert err is None

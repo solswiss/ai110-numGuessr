@@ -19,7 +19,7 @@ if "status" not in st.session_state:
     st.session_state.status = "playing"
 
 if "history" not in st.session_state:
-    st.session_state.history = []
+    st.session_state.history = list[int]
 
 if "last_message" not in st.session_state:
     st.session_state.last_message = None
@@ -66,7 +66,7 @@ def submit_logic(low_bound: int, high_bound: int):
     # Pass the explicitly provided bounds to our strict parser
     ok, guess_int, err = parse_guess(user_guess, low_bound, high_bound) 
 
-    if not ok:
+    if not ok or guess_int is None:
         st.session_state.last_message = err
         return  # Short-circuit immediately! No history, no score penalization.
 
